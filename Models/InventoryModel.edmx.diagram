@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b9f1d4a97d34b8e8e8e7808d998245a" Name="Diagram1" ZoomLevel="70">
+        <EntityTypeShape EntityType="IM_importModel.inventory_item_warehouse_details" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="IM_importModel.inventory_items" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="IM_importModel.FK_inventory_item_warehouse_details_inventory_items" ManuallyRouted="false" />
+        <AssociationConnector Association="IM_importModel.FK_inventory_items_inventory_items" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

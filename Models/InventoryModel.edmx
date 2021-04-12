@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="IM_importModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="inventory_item_warehouse_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inventory_item_id" Type="int" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+          <Property Name="chop_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="length_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="assemble_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="unit_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="split_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="reorder_point" Type="int" />
+          <Property Name="reorder_point_locked" Type="bit" Nullable="false" />
+          <Property Name="reorder_base_quantity" Type="int" />
+          <Property Name="waste_factor" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="waste_factor_locked" Type="bit" Nullable="false" />
+          <Property Name="zone" Type="varchar" MaxLength="50" />
+          <Property Name="location_sort_order" Type="int" />
+          <Property Name="website" Type="bit" Nullable="false" />
+          <Property Name="location" Type="varchar" MaxLength="50" />
+          <Property Name="item_location_id" Type="int" />
+          <Property Name="waste_factor_timeframe" Type="int" />
+          <Property Name="inventory_item_prompt_id" Type="int" />
+          <Property Name="catalog_id" Type="int" />
+          <Property Name="sub_catalog_id" Type="int" />
+          <Property Name="glass_report" Type="bit" Nullable="false" />
+          <Property Name="sample_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="rail_price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="notes" Type="nvarchar(max)" />
+          <Property Name="non_stock_item" Type="bit" Nullable="false" />
+          <Property Name="special_order" Type="bit" />
+          <Property Name="taxable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inventory_items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="itemnum" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="class_id" Type="int" />
+          <Property Name="taxable" Type="bit" Nullable="false" />
+          <Property Name="type_id" Type="int" />
+          <Property Name="vendor_part_num" Type="varchar" MaxLength="50" />
+          <Property Name="last_price_change_date" Type="datetime" />
+          <Property Name="new" Type="bit" Nullable="false" />
+          <Property Name="start_date" Type="datetime" />
+          <Property Name="available" Type="bit" Nullable="false" />
+          <Property Name="image_name" Type="varchar" MaxLength="200" />
+          <Property Name="image" Type="image" />
+          <Property Name="color_id" Type="int" />
+          <Property Name="avg_box_footage_pack_box_qty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="discount_level" Type="int" />
+          <Property Name="width" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="height" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="rabbet" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="notes" Type="varchar(max)" />
+          <Property Name="non_stock_item" Type="bit" Nullable="false" />
+          <Property Name="discontinued" Type="bit" Nullable="false" />
+          <Property Name="special_order" Type="bit" Nullable="false" />
+          <Property Name="warehouse_id" Type="int" Nullable="false" />
+          <Property Name="alt_itemnum" Type="varchar" MaxLength="50" />
+          <Property Name="box_quantity" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="box_quantity_locked" Type="bit" Nullable="false" />
+          <Property Name="default_vendor_id" Type="int" />
+          <Property Name="shared_item" Type="bit" Nullable="false" />
+          <Property Name="item_type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="created" Type="datetime" Nullable="false" />
+          <Property Name="upc" Type="varchar" MaxLength="100" />
+          <Property Name="mat_class_id" Type="int" />
+          <Property Name="last_update" Type="datetime" />
+          <Property Name="is_deleted" Type="bit" Nullable="false" />
+          <Property Name="sort_key" Type="varchar" MaxLength="50" />
+          <Property Name="modified" Type="datetime" />
+          <Property Name="actual_vendor" Type="bit" />
+          <Property Name="custom1" Type="nvarchar(max)" />
+          <Property Name="custom2" Type="nvarchar(max)" />
+          <Property Name="custom3" Type="nvarchar(max)" />
+          <Property Name="custom4" Type="nvarchar(max)" />
+          <Property Name="custom5" Type="nvarchar(max)" />
+          <Property Name="item_collection_id" Type="int" />
+          <Property Name="new_width" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="new_height" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="new_rabbet" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="item_style_id" Type="int" />
+          <Property Name="item_tag1_id" Type="int" />
+          <Property Name="item_tag2_id" Type="int" />
+          <Property Name="country_of_origin_id" Type="int" />
+          <Property Name="item_finish_id" Type="int" />
+          <Property Name="item_wood_type_id" Type="int" />
+          <Property Name="detail_notes" Type="nvarchar(max)" />
+          <Property Name="popup_notes" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_inventory_item_warehouse_details_inventory_items">
+          <End Role="inventory_items" Type="Self.inventory_items" Multiplicity="1" />
+          <End Role="inventory_item_warehouse_details" Type="Self.inventory_item_warehouse_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inventory_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="inventory_item_warehouse_details">
+              <PropertyRef Name="inventory_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inventory_items_inventory_items">
+          <End Role="inventory_items" Type="Self.inventory_items" Multiplicity="1" />
+          <End Role="inventory_items1" Type="Self.inventory_items" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="inventory_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="inventory_items1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IM_importModelStoreContainer">
+          <EntitySet Name="inventory_item_warehouse_details" EntityType="Self.inventory_item_warehouse_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="inventory_items" EntityType="Self.inventory_items" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_inventory_item_warehouse_details_inventory_items" Association="Self.FK_inventory_item_warehouse_details_inventory_items">
+            <End Role="inventory_items" EntitySet="inventory_items" />
+            <End Role="inventory_item_warehouse_details" EntitySet="inventory_item_warehouse_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inventory_items_inventory_items" Association="Self.FK_inventory_items_inventory_items">
+            <End Role="inventory_items" EntitySet="inventory_items" />
+            <End Role="inventory_items1" EntitySet="inventory_items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IM_importModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="inventory_item_warehouse_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inventory_item_id" Type="Int32" Nullable="false" />
+          <Property Name="warehouse_id" Type="Int32" Nullable="false" />
+          <Property Name="chop_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="length_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="assemble_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="unit_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="split_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="reorder_point" Type="Int32" />
+          <Property Name="reorder_point_locked" Type="Boolean" Nullable="false" />
+          <Property Name="reorder_base_quantity" Type="Int32" />
+          <Property Name="waste_factor" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="waste_factor_locked" Type="Boolean" Nullable="false" />
+          <Property Name="zone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="location_sort_order" Type="Int32" />
+          <Property Name="website" Type="Boolean" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="item_location_id" Type="Int32" />
+          <Property Name="waste_factor_timeframe" Type="Int32" />
+          <Property Name="inventory_item_prompt_id" Type="Int32" />
+          <Property Name="catalog_id" Type="Int32" />
+          <Property Name="sub_catalog_id" Type="Int32" />
+          <Property Name="glass_report" Type="Boolean" Nullable="false" />
+          <Property Name="sample_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="rail_price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="non_stock_item" Type="Boolean" Nullable="false" />
+          <Property Name="special_order" Type="Boolean" />
+          <Property Name="taxable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="inventory_items" Relationship="Self.FK_inventory_item_warehouse_details_inventory_items" FromRole="inventory_item_warehouse_details" ToRole="inventory_items" />
+        </EntityType>
+        <EntityType Name="inventory_items">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itemnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="class_id" Type="Int32" />
+          <Property Name="taxable" Type="Boolean" Nullable="false" />
+          <Property Name="type_id" Type="Int32" />
+          <Property Name="vendor_part_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="last_price_change_date" Type="DateTime" Precision="3" />
+          <Property Name="new" Type="Boolean" Nullable="false" />
+          <Property Name="start_date" Type="DateTime" Precision="3" />
+          <Property Name="available" Type="Boolean" Nullable="false" />
+          <Property Name="image_name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="color_id" Type="Int32" />
+          <Property Name="avg_box_footage_pack_box_qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="discount_level" Type="Int32" />
+          <Property Name="width" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="height" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="rabbet" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="non_stock_item" Type="Boolean" Nullable="false" />
+          <Property Name="discontinued" Type="Boolean" Nullable="false" />
+          <Property Name="special_order" Type="Boolean" Nullable="false" />
+          <Property Name="warehouse_id" Type="Int32" Nullable="false" />
+          <Property Name="alt_itemnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="box_quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="box_quantity_locked" Type="Boolean" Nullable="false" />
+          <Property Name="default_vendor_id" Type="Int32" />
+          <Property Name="shared_item" Type="Boolean" Nullable="false" />
+          <Property Name="item_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="upc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mat_class_id" Type="Int32" />
+          <Property Name="last_update" Type="DateTime" Precision="3" />
+          <Property Name="is_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="sort_key" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="modified" Type="DateTime" Precision="3" />
+          <Property Name="actual_vendor" Type="Boolean" />
+          <Property Name="custom1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="custom2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="custom3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="custom4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="custom5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="item_collection_id" Type="Int32" />
+          <Property Name="new_width" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="new_height" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="new_rabbet" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="item_style_id" Type="Int32" />
+          <Property Name="item_tag1_id" Type="Int32" />
+          <Property Name="item_tag2_id" Type="Int32" />
+          <Property Name="country_of_origin_id" Type="Int32" />
+          <Property Name="item_finish_id" Type="Int32" />
+          <Property Name="item_wood_type_id" Type="Int32" />
+          <Property Name="detail_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="popup_notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="inventory_item_warehouse_details" Relationship="Self.FK_inventory_item_warehouse_details_inventory_items" FromRole="inventory_items" ToRole="inventory_item_warehouse_details" />
+          <NavigationProperty Name="inventory_items1" Relationship="Self.FK_inventory_items_inventory_items" FromRole="inventory_items" ToRole="inventory_items1" />
+          <NavigationProperty Name="inventory_items2" Relationship="Self.FK_inventory_items_inventory_items" FromRole="inventory_items1" ToRole="inventory_items" />
+        </EntityType>
+        <Association Name="FK_inventory_item_warehouse_details_inventory_items">
+          <End Role="inventory_items" Type="Self.inventory_items" Multiplicity="1" />
+          <End Role="inventory_item_warehouse_details" Type="Self.inventory_item_warehouse_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inventory_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="inventory_item_warehouse_details">
+              <PropertyRef Name="inventory_item_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_inventory_items_inventory_items">
+          <End Role="inventory_items" Type="Self.inventory_items" Multiplicity="1" />
+          <End Role="inventory_items1" Type="Self.inventory_items" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="inventory_items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="inventory_items1">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IM_importEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="inventory_item_warehouse_details" EntityType="Self.inventory_item_warehouse_details" />
+          <EntitySet Name="inventory_items" EntityType="Self.inventory_items" />
+          <AssociationSet Name="FK_inventory_item_warehouse_details_inventory_items" Association="Self.FK_inventory_item_warehouse_details_inventory_items">
+            <End Role="inventory_items" EntitySet="inventory_items" />
+            <End Role="inventory_item_warehouse_details" EntitySet="inventory_item_warehouse_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_inventory_items_inventory_items" Association="Self.FK_inventory_items_inventory_items">
+            <End Role="inventory_items" EntitySet="inventory_items" />
+            <End Role="inventory_items1" EntitySet="inventory_items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IM_importModelStoreContainer" CdmEntityContainer="IM_importEntities">
+          <EntitySetMapping Name="inventory_item_warehouse_details">
+            <EntityTypeMapping TypeName="IM_importModel.inventory_item_warehouse_details">
+              <MappingFragment StoreEntitySet="inventory_item_warehouse_details">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="inventory_item_id" ColumnName="inventory_item_id" />
+                <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+                <ScalarProperty Name="chop_price" ColumnName="chop_price" />
+                <ScalarProperty Name="length_price" ColumnName="length_price" />
+                <ScalarProperty Name="assemble_price" ColumnName="assemble_price" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+                <ScalarProperty Name="split_price" ColumnName="split_price" />
+                <ScalarProperty Name="reorder_point" ColumnName="reorder_point" />
+                <ScalarProperty Name="reorder_point_locked" ColumnName="reorder_point_locked" />
+                <ScalarProperty Name="reorder_base_quantity" ColumnName="reorder_base_quantity" />
+                <ScalarProperty Name="waste_factor" ColumnName="waste_factor" />
+                <ScalarProperty Name="waste_factor_locked" ColumnName="waste_factor_locked" />
+                <ScalarProperty Name="zone" ColumnName="zone" />
+                <ScalarProperty Name="location_sort_order" ColumnName="location_sort_order" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="item_location_id" ColumnName="item_location_id" />
+                <ScalarProperty Name="waste_factor_timeframe" ColumnName="waste_factor_timeframe" />
+                <ScalarProperty Name="inventory_item_prompt_id" ColumnName="inventory_item_prompt_id" />
+                <ScalarProperty Name="catalog_id" ColumnName="catalog_id" />
+                <ScalarProperty Name="sub_catalog_id" ColumnName="sub_catalog_id" />
+                <ScalarProperty Name="glass_report" ColumnName="glass_report" />
+                <ScalarProperty Name="sample_price" ColumnName="sample_price" />
+                <ScalarProperty Name="rail_price" ColumnName="rail_price" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="non_stock_item" ColumnName="non_stock_item" />
+                <ScalarProperty Name="special_order" ColumnName="special_order" />
+                <ScalarProperty Name="taxable" ColumnName="taxable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inventory_items">
+            <EntityTypeMapping TypeName="IM_importModel.inventory_items">
+              <MappingFragment StoreEntitySet="inventory_items">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="itemnum" ColumnName="itemnum" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+                <ScalarProperty Name="taxable" ColumnName="taxable" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="vendor_part_num" ColumnName="vendor_part_num" />
+                <ScalarProperty Name="last_price_change_date" ColumnName="last_price_change_date" />
+                <ScalarProperty Name="new" ColumnName="new" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="available" ColumnName="available" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="color_id" ColumnName="color_id" />
+                <ScalarProperty Name="avg_box_footage_pack_box_qty" ColumnName="avg_box_footage_pack_box_qty" />
+                <ScalarProperty Name="discount_level" ColumnName="discount_level" />
+                <ScalarProperty Name="width" ColumnName="width" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="rabbet" ColumnName="rabbet" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="non_stock_item" ColumnName="non_stock_item" />
+                <ScalarProperty Name="discontinued" ColumnName="discontinued" />
+                <ScalarProperty Name="special_order" ColumnName="special_order" />
+                <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+                <ScalarProperty Name="alt_itemnum" ColumnName="alt_itemnum" />
+                <ScalarProperty Name="box_quantity" ColumnName="box_quantity" />
+                <ScalarProperty Name="box_quantity_locked" ColumnName="box_quantity_locked" />
+                <ScalarProperty Name="default_vendor_id" ColumnName="default_vendor_id" />
+                <ScalarProperty Name="shared_item" ColumnName="shared_item" />
+                <ScalarProperty Name="item_type" ColumnName="item_type" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="upc" ColumnName="upc" />
+                <ScalarProperty Name="mat_class_id" ColumnName="mat_class_id" />
+                <ScalarProperty Name="last_update" ColumnName="last_update" />
+                <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+                <ScalarProperty Name="sort_key" ColumnName="sort_key" />
+                <ScalarProperty Name="modified" ColumnName="modified" />
+                <ScalarProperty Name="actual_vendor" ColumnName="actual_vendor" />
+                <ScalarProperty Name="custom1" ColumnName="custom1" />
+                <ScalarProperty Name="custom2" ColumnName="custom2" />
+                <ScalarProperty Name="custom3" ColumnName="custom3" />
+                <ScalarProperty Name="custom4" ColumnName="custom4" />
+                <ScalarProperty Name="custom5" ColumnName="custom5" />
+                <ScalarProperty Name="item_collection_id" ColumnName="item_collection_id" />
+                <ScalarProperty Name="new_width" ColumnName="new_width" />
+                <ScalarProperty Name="new_height" ColumnName="new_height" />
+                <ScalarProperty Name="new_rabbet" ColumnName="new_rabbet" />
+                <ScalarProperty Name="item_style_id" ColumnName="item_style_id" />
+                <ScalarProperty Name="item_tag1_id" ColumnName="item_tag1_id" />
+                <ScalarProperty Name="item_tag2_id" ColumnName="item_tag2_id" />
+                <ScalarProperty Name="country_of_origin_id" ColumnName="country_of_origin_id" />
+                <ScalarProperty Name="item_finish_id" ColumnName="item_finish_id" />
+                <ScalarProperty Name="item_wood_type_id" ColumnName="item_wood_type_id" />
+                <ScalarProperty Name="detail_notes" ColumnName="detail_notes" />
+                <ScalarProperty Name="popup_notes" ColumnName="popup_notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

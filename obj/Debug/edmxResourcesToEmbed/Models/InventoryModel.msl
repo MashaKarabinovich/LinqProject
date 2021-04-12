@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IM_importModelStoreContainer" CdmEntityContainer="IM_importEntities">
+    <EntitySetMapping Name="inventory_item_warehouse_details">
+      <EntityTypeMapping TypeName="IM_importModel.inventory_item_warehouse_details">
+        <MappingFragment StoreEntitySet="inventory_item_warehouse_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="inventory_item_id" ColumnName="inventory_item_id" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="chop_price" ColumnName="chop_price" />
+          <ScalarProperty Name="length_price" ColumnName="length_price" />
+          <ScalarProperty Name="assemble_price" ColumnName="assemble_price" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="split_price" ColumnName="split_price" />
+          <ScalarProperty Name="reorder_point" ColumnName="reorder_point" />
+          <ScalarProperty Name="reorder_point_locked" ColumnName="reorder_point_locked" />
+          <ScalarProperty Name="reorder_base_quantity" ColumnName="reorder_base_quantity" />
+          <ScalarProperty Name="waste_factor" ColumnName="waste_factor" />
+          <ScalarProperty Name="waste_factor_locked" ColumnName="waste_factor_locked" />
+          <ScalarProperty Name="zone" ColumnName="zone" />
+          <ScalarProperty Name="location_sort_order" ColumnName="location_sort_order" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="item_location_id" ColumnName="item_location_id" />
+          <ScalarProperty Name="waste_factor_timeframe" ColumnName="waste_factor_timeframe" />
+          <ScalarProperty Name="inventory_item_prompt_id" ColumnName="inventory_item_prompt_id" />
+          <ScalarProperty Name="catalog_id" ColumnName="catalog_id" />
+          <ScalarProperty Name="sub_catalog_id" ColumnName="sub_catalog_id" />
+          <ScalarProperty Name="glass_report" ColumnName="glass_report" />
+          <ScalarProperty Name="sample_price" ColumnName="sample_price" />
+          <ScalarProperty Name="rail_price" ColumnName="rail_price" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="non_stock_item" ColumnName="non_stock_item" />
+          <ScalarProperty Name="special_order" ColumnName="special_order" />
+          <ScalarProperty Name="taxable" ColumnName="taxable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventory_items">
+      <EntityTypeMapping TypeName="IM_importModel.inventory_items">
+        <MappingFragment StoreEntitySet="inventory_items">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="itemnum" ColumnName="itemnum" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="class_id" ColumnName="class_id" />
+          <ScalarProperty Name="taxable" ColumnName="taxable" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="vendor_part_num" ColumnName="vendor_part_num" />
+          <ScalarProperty Name="last_price_change_date" ColumnName="last_price_change_date" />
+          <ScalarProperty Name="new" ColumnName="new" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="available" ColumnName="available" />
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="color_id" ColumnName="color_id" />
+          <ScalarProperty Name="avg_box_footage_pack_box_qty" ColumnName="avg_box_footage_pack_box_qty" />
+          <ScalarProperty Name="discount_level" ColumnName="discount_level" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="rabbet" ColumnName="rabbet" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="non_stock_item" ColumnName="non_stock_item" />
+          <ScalarProperty Name="discontinued" ColumnName="discontinued" />
+          <ScalarProperty Name="special_order" ColumnName="special_order" />
+          <ScalarProperty Name="warehouse_id" ColumnName="warehouse_id" />
+          <ScalarProperty Name="alt_itemnum" ColumnName="alt_itemnum" />
+          <ScalarProperty Name="box_quantity" ColumnName="box_quantity" />
+          <ScalarProperty Name="box_quantity_locked" ColumnName="box_quantity_locked" />
+          <ScalarProperty Name="default_vendor_id" ColumnName="default_vendor_id" />
+          <ScalarProperty Name="shared_item" ColumnName="shared_item" />
+          <ScalarProperty Name="item_type" ColumnName="item_type" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="upc" ColumnName="upc" />
+          <ScalarProperty Name="mat_class_id" ColumnName="mat_class_id" />
+          <ScalarProperty Name="last_update" ColumnName="last_update" />
+          <ScalarProperty Name="is_deleted" ColumnName="is_deleted" />
+          <ScalarProperty Name="sort_key" ColumnName="sort_key" />
+          <ScalarProperty Name="modified" ColumnName="modified" />
+          <ScalarProperty Name="actual_vendor" ColumnName="actual_vendor" />
+          <ScalarProperty Name="custom1" ColumnName="custom1" />
+          <ScalarProperty Name="custom2" ColumnName="custom2" />
+          <ScalarProperty Name="custom3" ColumnName="custom3" />
+          <ScalarProperty Name="custom4" ColumnName="custom4" />
+          <ScalarProperty Name="custom5" ColumnName="custom5" />
+          <ScalarProperty Name="item_collection_id" ColumnName="item_collection_id" />
+          <ScalarProperty Name="new_width" ColumnName="new_width" />
+          <ScalarProperty Name="new_height" ColumnName="new_height" />
+          <ScalarProperty Name="new_rabbet" ColumnName="new_rabbet" />
+          <ScalarProperty Name="item_style_id" ColumnName="item_style_id" />
+          <ScalarProperty Name="item_tag1_id" ColumnName="item_tag1_id" />
+          <ScalarProperty Name="item_tag2_id" ColumnName="item_tag2_id" />
+          <ScalarProperty Name="country_of_origin_id" ColumnName="country_of_origin_id" />
+          <ScalarProperty Name="item_finish_id" ColumnName="item_finish_id" />
+          <ScalarProperty Name="item_wood_type_id" ColumnName="item_wood_type_id" />
+          <ScalarProperty Name="detail_notes" ColumnName="detail_notes" />
+          <ScalarProperty Name="popup_notes" ColumnName="popup_notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
