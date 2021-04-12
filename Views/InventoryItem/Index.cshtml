@@ -1,0 +1,96 @@
+﻿@model List<LinqApplication.Models.InventoryItem>
+
+@{
+    ViewBag.Title = "Index";
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 5);
+
+}
+
+<h2>Inventory Items:</h2>
+
+<!-- Testing diffierent html functions and print outs-->
+
+<p>
+    @Html.ActionLink("Search", "SearchFor")
+</p>
+
+<p>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <b>Search By:</b>@Html.RadioButton("searchby", "Item Number") <text>Item Number</text>
+        @Html.RadioButton("searchby", "Item") <text>Item</text> <br />
+        @Html.TextBox("search") <input type="submit" value="Search" />
+    }
+</p>
+
+<!-- table to show-->
+
+<table class="table">
+    <tr>
+        <th style="width:100px">
+            @Html.DisplayNameFor(model => model[0].itemnum)
+            @Html.DisplayNameFor(model => model[0].item_type)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.itemnum)
+                @Html.DisplayFor(modelItem => item.item_type)
+            <td>
+                <a class="Edit" href="javascript:;">Edit</a>
+                <a class="Update" href="javascript:;" style="display:none">Update</a>
+                <a class="Cancel" href="javascript:;" style="display:none">Cancel</a>
+                <a class="Delete" href="javascript:;">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!-- Javascript-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
+
+
+<!-- table style-->
+<style>
+    table{
+        width: 100%;
+        background-color: #f1f1c1;
+    }
+
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table#t01 th {
+            color: white;
+            background-color: blue;
+        }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+</style> 
